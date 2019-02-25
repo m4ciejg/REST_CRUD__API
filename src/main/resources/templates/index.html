@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+   $.getJSON("http://127.0.0.1:8080/api/notes/", function(result){
+      $.each(result, function(key,value) {
+         $("#productsJson").append(value.id+" "+value.content+" ");
+      }); 
+   });
+});
+    </script>    
+   
+    </head>
+<body>
+
+<h2>The XMLHttpRequest Object</h2>
+
+<button type="button">Request data</button>
+
+<p class="id">Id: </p>
+<p class="title">title: </p>
+<p class="author">author: </p>
+<p class="content">content: </p>
+<p class="createdAt">createdAt: </p>
+<p class="updatedAt">updatedAt: </p>
+
+<div id="productsJson"></div>
+
+</body>
+</html>
