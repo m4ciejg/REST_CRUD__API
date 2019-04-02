@@ -16,21 +16,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 @Table(name="feedback")
 @EntityListeners(AuditingEntityListener.class)
-@JsonIgnoreProperties(allowGetters=true)
 public class EntityFeedback  {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	Long id;
+	private Long id;
 	
 	@NotBlank
-	String userName;
+	private String userName;
 	
 	@NotBlank
-	String email;
+	private String email;
 	
 	@NotBlank
-	String message;
+	private String message;
 
 	public Long getId() {
 		return id;
@@ -40,11 +39,11 @@ public class EntityFeedback  {
 		this.id = id;
 	}
 
-	public String getUser_name() {
+	public String getUsername() {
 		return userName;
 	}
 
-	public void setUser_name(String user_name) {
+	public void setUsername(String user_name) {
 		this.userName = user_name;
 	}
 
